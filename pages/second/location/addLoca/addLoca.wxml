@@ -1,0 +1,44 @@
+<!--pages/second/location/addLoca/addLoca.wxml-->
+
+<view class='main'>
+  <view class='linkman'>
+    <view class='linkman-lable'>联系人</view>
+    <view class='linkman-select'>
+      <input placeholder='姓名' class='linkman-input' bindinput="getName"></input>
+      <view class='sex-select'>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio" wx:for="{{sexkind}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+          </label>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+
+  <view class='phone-address'>
+    <view class='phone-lable'>电话</view>
+    <view class='phone-select'>
+      <input placeholder='手机号码' class='phone-input' bindinput="getPhone"></input>
+    </view>
+  </view>
+
+  <view class='phone-address'>
+    <view class='phone-lable'>地址</view>
+    <view class='phone-select'>
+      <input placeholder='选择收货地址' class='phone-input' bindinput="getAddress"></input>
+    </view>
+  </view>
+
+  <view class='phone-address'>
+    <view class='phone-lable'>当前地址</view>
+    <view class='phone-select'>
+      <view class='address'>
+        {{user.address}}
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+<view class='button' hover-class='button-hover' bindtap='submit'> 保存 </view>

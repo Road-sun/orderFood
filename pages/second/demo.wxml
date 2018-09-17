@@ -1,0 +1,103 @@
+<swiper class="swiper-main" duration="200" current="{{currentTab}}" bindchange="bindChange">
+
+  <swiper-item>
+    <view class='option-main'>
+      <view class="position">
+        <navigator url='location/location' class='position_a'>
+          <text class="iconfont icon-location"></text>{{address}}
+        </navigator>
+      </view>
+
+
+      <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true">
+        <block wx:for="{{movies}}" wx:for-index="index">
+          <swiper-item>
+            <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+          </swiper-item>
+        </block>
+      </swiper>
+
+
+      <view class='order'>
+
+        <view class='order-main'>
+          <view class='order-box box-left'>
+            <view class='box-name'>午餐</view>
+            <view class='lijiqg'>立即抢购 ></view>
+            <image class='box-img' src='../img/np.jpg'></image>
+          </view>
+          <view class='order-box box-right'>
+            <view class='box-name'>晚餐</view>
+            <view class='lijiqg'>立即抢购 ></view>
+            <image class='box-img' src='../img/4.jpg'></image>
+          </view>
+        </view>
+
+        <navigator class='order_a' url='order/order'>
+          立即点餐
+        </navigator>
+      </view>
+    </view>
+
+
+  </swiper-item>
+
+  <swiper-item>
+    <view class='list-box'>
+
+      <view class='list-cc'>这里空空如也...</view>
+      <navigator class='order_a' url='order/order'>
+        去逛逛
+      </navigator>
+    </view>
+
+  </swiper-item>
+
+  <swiper-item>
+    <view class='per-main'>
+      <view class='per-info'>
+        <view class='per-img-box'>
+          <image class='per-img' src='{{userInfo.avatarUrl}}'></image>
+        </view>
+        <view class='per-mess'>
+          <view class='per-name'>{{userInfo.nickName}}</view>
+        </view>
+        <view></view>
+        <view></view>
+      </view>
+      <view class='list-all'>
+        <view class='list-view'>我的订单
+          <text class='list-font'>></text>
+        </view>
+        <view class='list-view'>收货地址
+          <text class='list-font'>></text>
+        </view>
+        <view class='list-view'>在线客服
+          <text class='list-font'>></text>
+        </view>
+      </view>
+
+    </view>
+  </swiper-item>
+
+
+</swiper>
+
+
+<view class='meau'>
+  <view class='meau_a' bindtap="swichNav" data-current="0">
+    <text class="iconfont s-icon {{currentTab==0 ?'icon-shouye':'icon-shouye-xianxing'}}" bindtap="swichNav" data-current="0"></text>
+    <text class='meau_a_font' bindtap="swichNav" data-current="0">主页</text>
+  </view>
+
+  <view class='meau_a' bindtap="swichNav" data-current="1">
+    <text class="iconfont s-icon {{currentTab==1 ?'icon-caigou':'icon-caigou-xianxing'}}" bindtap="swichNav" data-current="1"></text>
+    <text class='meau_a_font' bindtap="swichNav" data-current="1">订单</text>
+  </view>
+
+  <view class='meau_a' bindtap="swichNav" data-current="2">
+    <text class="iconfont s-icon {{currentTab==2 ?'icon-diamond':'icon-diamond-o'}}" bindtap="swichNav" data-current="2"></text>
+    <text class='meau_a_font' bindtap="swichNav" data-current="2">我的</text>
+  </view>
+
+</view>

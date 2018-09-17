@@ -1,0 +1,163 @@
+<!--pages/second/shop/shop.wxml-->
+<view class='shop-info'>
+  <view class='shop-img-box'>
+    <image class='shop-img' src='{{shopImg}}'></image>
+  </view>
+  <view class='shop-mess'>
+    <view class='shop-name'>和顺饭店</view>
+    <view class='shop-eva'>这家店饭菜很好吃噢...</view>
+  </view>
+</view>
+
+
+<scroll-view class="scroll-tap" scroll-x="true">
+  <view class="scroll-option {{currentTab==0 ? 'scroll-option-tap' : ''}}" data-current="0" bindtap="swichNav">点餐</view>
+  <view class="scroll-option {{currentTab==1 ? 'scroll-option-tap' : ''}}" data-current="1" bindtap="swichNav">评价</view>
+  <view class="scroll-option {{currentTab==2 ? 'scroll-option-tap' : ''}}" data-current="2" bindtap="swichNav">商家</view>
+</scroll-view>
+
+
+<swiper class="swiper-tap" duration="200" current="{{currentTab}}" bindchange="bindChange">
+
+  <swiper-item>
+    <view class='shop-food'>
+      <scroll-view scroll-y="true" class='shop-food-kind'>
+        <block wx:for="{{shop}}">
+          <view class="food-kind" hover-class='food-kind-hover' bindtap="serviceSelection" data-name='{{index}}'>{{index}}</view>
+        </block>
+      </scroll-view>
+
+      <scroll-view scroll-y="true" class='food-mes' scroll-into-view="{{toView}}" scroll-with-animation="true">
+
+        <block wx:for="{{shop}}">
+          <view id='{{module.encodeURIWP(index)}}'>
+            <block wx:for="{{item}}">
+              <view class='food-card'>
+                <view class='shop-food-img'>
+                  <image class='food-img' src="https://dinner-public-picture.oss-cn-beijing.aliyuncs.com/meal/{{item.foodImg}}"></image>
+                </view>
+                <view class='food-info'>
+                  <view class='food-name'>{{item.foodName}}</view>
+                  <view class='food-com'>好评率 {{item.comment}}%</view>
+                  <view class='buy-food'>
+                    <view class='food-price'>￥{{item.foodPrice}}</view>
+                    <view class='add-shop' bindtap='addFoodnum' data-id='{{item.id}}' data-type='{{item}}' hover-class='add-shop-hover'>+</view>
+                    <text class='calculate-num'>{{item.count}}</text>
+                    <view class='min-shop' bindtap='minFoodnum' data-id='{{item.id}} ' data-type='{{item}}' hover-class='min-shop-hover'>-</view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+      </scroll-view>
+
+    </view>
+
+    <view class='buy-box '>
+      <view class='shop-buy ' bindtap="powerDrawer" data-statu="open">
+        <text class='iconfont icon--gouwuche s-icon '></text>
+        <text class='font-loca '>￥{{allPrice}}</text>
+      </view>
+      <form bindsubmit="{{isHave? 'payFor':'' }}" report-submit="true">
+        <button class="pay-for {{isHave? 'pay-for-have':'' }}" form-type='submit'>去结算</button>
+      </form>
+    </view>
+
+  </swiper-item>
+
+  <swiper-item>
+    <scroll-view scroll-y="true" class='shop-info-main '>
+      <view class='comment-box '>
+        <view class='comment-box-left '>
+          <text style='color:red;font-size:30px '>4.7</text>
+          <text style='color:#8d8d8d;font-size:13px '>综合评分</text>
+        </view>
+
+        <view class='comment-box-right '>
+          <view class='comment-line '>
+            <text style='font-size:13px;float:left; '>服务态度</text>
+            <text style='color:red;font-size:12px;float:right '>5.0</text>
+          </view>
+          <view class='comment-line '>
+            <text style='font-size:13px;float:left; '>商品评分</text>
+            <text style='color:red;font-size:12px;float:right '>4.3</text>
+          </view>
+          <view class='comment-line '>
+            <text style='font-size:13px;float:left; '>送达时间</text>
+            <text style='color:#8d8d8d;font-size:12px;float:right '>39分钟</text>
+          </view>
+        </view>
+      </view>
+
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item>
+    <scroll-view class='shop-info-main ' scroll-y="true">
+      <view class='shop-jianjie '>暂无简介</view>
+      <view class='shop-info-all '>
+        <view class='shop-info-jk '>
+          <text class='shop-info-name '>商家名称</text>
+          <text class='shop-info-content '>和顺饭店</text>
+        </view>
+        <view class='shop-info-jk '>
+          <text class='shop-info-name '>商家品类</text>
+          <text class='shop-info-content '>简餐</text>
+        </view>
+        <view class='shop-info-jk '>
+          <text class='shop-info-name '>商家地址</text>
+          <text class='shop-info-content '>餐厅一层东北角</text>
+        </view>
+        <view class='shop-info-jk '>
+          <text class='shop-info-name '>商家电话</text>
+          <text class='shop-info-content '>13502161775</text>
+        </view>
+        <view class='shop-info-jk '>
+          <text class='shop-info-name '>营业时间</text>
+          <text class='shop-info-content '>9:00/19:20</text>
+        </view>
+      </view>
+
+      <navigator class='order_a '>
+        举报商家
+      </navigator>
+
+    </scroll-view>
+
+  </swiper-item>
+
+</swiper>
+
+
+<!--down-box-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}">
+</view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+  <view class='shop-car-head '>
+    <view class='shop-car-text '>购物车</view>
+    <view class='delete-shop-car' bindtap='emptyBoxData'>
+      <text class='iconfont icon-shanchu delete-icon '></text>
+      <text>清空</text>
+    </view>
+  </view>
+  <!--drawer content-->
+  <view class="drawer_content">
+    <block wx:for="{{selectFood}}">
+      <view class='drawer_title line '>
+        <view class='select-food-name '>{{item.foodName}}</view>
+        <view class='select-food-num '>
+          <view class='add-shop' data-index='{{index}}' data-id='{{item.id}}' bindtap='boxAddNumber' hover-class='add-shop-hover'>+</view>
+          <text class='calculate-num'>{{item.count}}</text>
+          <view class='min-shop' data-index='{{index}}' data-id='{{item.id}}' bindtap='boxMinNumber' hover-class='min-shop-hover'>-</view>
+        </view>
+        <view class='select-food-price '>￥
+          <text>{{item.foodPrice}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<wxs module="module" src='module.wxs'></wxs>

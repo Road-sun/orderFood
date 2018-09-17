@@ -1,0 +1,34 @@
+<!--pages/second/location/location.wxml-->
+
+<scroll-view scroll-y="true" class='main'>
+  <view class='location'>
+    <view class='bmp-head'>
+      当前地址
+    </view>
+    <view class='bmp-location'>
+
+      <view class='address'  bindtap='redirectTo'>
+        {{address}}
+      </view>
+      <view class='re-location' bindtap='reLocation'>
+        重新定位
+      </view>
+    </view>
+  </view>
+
+  <view class='other-add'>
+    <view class='other-head'>收货地址</view>
+    <block wx:for="{{addressInto}}">
+      <view class='address-into' bindtap='reLaunchTo' data-id="{{item.id}}">
+        <view class='item-address'>{{item.address}}</view>
+        <view class='second-address'>{{item.secondAddress}}</view>
+        <view class='item-user'>{{item.name}}({{item.sex}}) {{item.phone}}</view>
+      </view>
+    </block>
+
+    <navigator class='add-address' url="addLoca/addLoca">
+      新增地址
+    </navigator>
+
+  </view>
+</scroll-view>

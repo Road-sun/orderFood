@@ -1,0 +1,242 @@
+<!--pages/second/order/order.wxml-->
+
+
+
+<view class="scroll-floor">
+  <view class="scroll-option {{currentTab==0 ? 'scroll-option-tap' : ''}}" data-current="0" bindtap="swichNav" id="L1">1L</view>
+  <view class="scroll-option {{currentTab==1 ? 'scroll-option-tap' : ''}}" data-current="1" bindtap="swichNav" id="L2">2L</view>
+  <view class="scroll-option {{currentTab==2 ? 'scroll-option-tap' : ''}}" data-current="2" bindtap="swichNav" id="L3">3L</view>
+  <view class="scroll-option {{currentTab==3 ? 'scroll-option-tap' : ''}}" data-current="3" bindtap="swichNav" id="L4">4L</view>
+</view>
+
+
+<swiper class="scroll-shop-floor" duration="200" current="{{currentTab}}" bindchange="bindChange">
+  <swiper-item>
+    <scroll-view scroll-y="true" class='scroll-shop'>
+
+      <view class='reco-food'>
+        <view class='head-food-line'>推荐美食</view>
+        <view class='head-food-content'>
+          <view class='head-food'>
+            <image class='head-food-img' src='../../img/11.jpg'></image>
+            <view class='head-food-name'>鸡腿堡+薯条+可乐</view>
+            <view class='head-food-com'>10人好评</view>
+            <view class='head-food-price'>￥16</view>
+          </view>
+          <view class='head-food'>
+            <image class='head-food-img' src='../../img/22.jpg'></image>
+            <view class='head-food-name'>鸡腿堡+薯条+可乐</view>
+            <view class='head-food-com'>10人好评</view>
+            <view class='head-food-price'>￥16</view>
+          </view>
+          <view class='head-food'>
+            <image class='head-food-img' src='../../img/11.jpg'></image>
+            <view class='head-food-name'>鸡腿堡+薯条+可乐</view>
+            <view class='head-food-com'>10人好评</view>
+            <view class='head-food-price'>￥16</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='shop-box'>
+
+        <view class='head-food-line' style='border-bottom: 0.5px solid #DDDDDD;'>其他店铺</view>
+
+        <block wx:for="{{tip0}}">
+
+          <navigator class="shop" hover-class='cilck_bg' url='../shop/shop?dataid={{item.id}}&shopImg={{item.img}}' id='{{item.id}}' bindtap="UpdateSeller" data-id="{{item.id}}">
+            <view class='shop-img-box'>
+              <image mode='aspectFit' src="https://dinner-public-picture.oss-cn-beijing.aliyuncs.com/seller/{{item.img}}" class='shop_img'></image>
+            </view>
+
+            <view class="shop-card">
+              <view class="shop-name">{{item.shopName}}</view>
+              <view class='shop-star'>☆☆☆☆☆</view>
+              <view class='shop-address'>{{item.shopAdd}} 餐厅一层西北角</view>
+              <view class='shop-price'>
+                人均￥
+                <view class='shop-price-rmb'>{{item.foodPrice}}</view>
+                <text decode="{{true}}">&nbsp;| 评分&nbsp;</text>
+                <view class='shop-scure'>{{item.score}}</view>
+              </view>
+
+            </view>
+
+          </navigator>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+   <swiper-item>
+    <scroll-view scroll-y="true" class='scroll-shop'>
+
+      <view class='reco-food'>
+        <view class='head-food-line'>推荐美食</view>
+        <view class='head-food-content'>
+          <view class='head-food'>
+            <image class='head-food-img'></image>
+            <view class='head-food-name'>鸡腿堡+薯条+可乐</view>
+            <view class='head-food-com'>10人好评</view>
+            <view class='head-food-price'>￥16</view>
+          </view>
+          <view class='head-food'>
+            <image class='head-food-img'></image>
+            <view class='head-food-name'>鸡腿堡+薯条+可乐</view>
+            <view class='head-food-com'>10人好评</view>
+            <view class='head-food-price'>￥16</view>
+          </view>
+          <view class='head-food'>
+            <image class='head-food-img'></image>
+            <view class='head-food-name'>鸡腿堡+薯条+可乐</view>
+            <view class='head-food-com'>10人好评</view>
+            <view class='head-food-price'>￥16</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='shop-box'>
+
+        <view class='head-food-line' style='border-bottom: 0.5px solid #DDDDDD;'>其他店铺</view>
+
+        <block wx:for="{{tip1}}">
+
+          <navigator class="shop" hover-class='cilck_bg' url='../shop/shop?dataid={{item.id}}' id='{{item.id}}' bindtap="UpdateSeller" data-id="{{item.id}}">
+            <view class='shop-img-box'>
+              <image mode='aspectFit' src="https://dinner-public-picture.oss-cn-beijing.aliyuncs.com/seller/{{item.img}}" class='shop_img'></image>
+            </view>
+
+            <view class="shop-card">
+              <view class="shop-name">{{item.shopName}}</view>
+              <view class='shop-star'>☆☆☆☆☆</view>
+              <view class='shop-address'>{{item.shopAdd}} 餐厅一层西北角</view>
+              <view class='shop-price'>
+                人均￥
+                <view class='shop-price-rmb'>{{item.foodPrice}}</view>
+                <text decode="{{true}}">&nbsp;| 评分&nbsp;</text>
+                <view class='shop-scure'>{{item.score}}</view>
+              </view>
+
+            </view>
+
+          </navigator>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+   <swiper-item>
+    <scroll-view scroll-y="true" class='scroll-shop'>
+
+      <view class='reco-food'>
+        <view class='head-food-line'>推荐美食</view>
+        <view class='head-food-content'>
+          <view class='head-food'>
+            <image class='head-food-img'></image>
+            <view class='head-food-name'>鸡腿堡+薯条+可乐</view>
+            <view class='head-food-com'>10人好评</view>
+            <view class='head-food-price'>￥16</view>
+          </view>
+          <view class='head-food'>
+            <image class='head-food-img'></image>
+            <view class='head-food-name'>鸡腿堡+薯条+可乐</view>
+            <view class='head-food-com'>10人好评</view>
+            <view class='head-food-price'>￥16</view>
+          </view>
+          <view class='head-food'>
+            <image class='head-food-img'></image>
+            <view class='head-food-name'>鸡腿堡+薯条+可乐</view>
+            <view class='head-food-com'>10人好评</view>
+            <view class='head-food-price'>￥16</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='shop-box'>
+
+        <view class='head-food-line' style='border-bottom: 0.5px solid #DDDDDD;'>其他店铺</view>
+
+        <block wx:for="{{tip2}}">
+
+          <navigator class="shop" hover-class='cilck_bg' url='../shop/shop?dataid={{item.id}}' id='{{item.id}}' bindtap="UpdateSeller" data-id="{{item.id}}">
+            <view class='shop-img-box'>
+              <image mode='aspectFit' src="https://dinner-public-picture.oss-cn-beijing.aliyuncs.com/seller/{{item.img}}" class='shop_img'></image>
+            </view>
+
+            <view class="shop-card">
+              <view class="shop-name">{{item.shopName}}</view>
+              <view class='shop-star'>☆☆☆☆☆</view>
+              <view class='shop-address'>{{item.shopAdd}} 餐厅一层西北角</view>
+              <view class='shop-price'>
+                人均￥
+                <view class='shop-price-rmb'>{{item.foodPrice}}</view>
+                <text decode="{{true}}">&nbsp;| 评分&nbsp;</text>
+                <view class='shop-scure'>{{item.score}}</view>
+              </view>
+
+            </view>
+
+          </navigator>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+   <swiper-item>
+    <scroll-view scroll-y="true" class='scroll-shop'>
+
+      <view class='reco-food'>
+        <view class='head-food-line'>推荐美食</view>
+        <view class='head-food-content'>
+          <view class='head-food'>
+            <image class='head-food-img'></image>
+            <view class='head-food-name'>鸡腿堡+薯条+可乐</view>
+            <view class='head-food-com'>10人好评</view>
+            <view class='head-food-price'>￥16</view>
+          </view>
+          <view class='head-food'>
+            <image class='head-food-img'></image>
+            <view class='head-food-name'>鸡腿堡+薯条+可乐</view>
+            <view class='head-food-com'>10人好评</view>
+            <view class='head-food-price'>￥16</view>
+          </view>
+          <view class='head-food'>
+            <image class='head-food-img'></image>
+            <view class='head-food-name'>鸡腿堡+薯条+可乐</view>
+            <view class='head-food-com'>10人好评</view>
+            <view class='head-food-price'>￥16</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='shop-box'>
+
+        <view class='head-food-line' style='border-bottom: 0.5px solid #DDDDDD;'>其他店铺</view>
+
+        <block wx:for="{{tip3}}">
+
+          <navigator class="shop" hover-class='cilck_bg' url='../shop/shop?dataid={{item.id}}' id='{{item.id}}' bindtap="UpdateSeller" data-id="{{item.id}}">
+            <view class='shop-img-box'>
+              <image mode='aspectFit' src="https://dinner-public-picture.oss-cn-beijing.aliyuncs.com/seller/{{item.img}}" class='shop_img'></image>
+            </view>
+
+            <view class="shop-card">
+              <view class="shop-name">{{item.shopName}}</view>
+              <view class='shop-star'>☆☆☆☆☆</view>
+              <view class='shop-address'>{{item.shopAdd}} 餐厅一层西北角</view>
+              <view class='shop-price'>
+                人均￥
+                <view class='shop-price-rmb'>{{item.foodPrice}}</view>
+                <text decode="{{true}}">&nbsp;| 评分&nbsp;</text>
+                <view class='shop-scure'>{{item.score}}</view>
+              </view>
+
+            </view>
+
+          </navigator>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+</swiper>

@@ -1,0 +1,17 @@
+<!--pages/second/pay/pay.wxml-->
+
+
+<view class='shear-plate-box'>
+
+  <text class='copy-hint'>请复制当前链接到浏览器中打开,进行支付后返回</text>
+
+  <text selectable="true" class='shear-plate'>https://box-get.com/meal/pay?water={{listUrl}}</text>
+
+  <view class="shear-plate-bt" bindtap="copyTBL" hover-class='on'>一键复制</view>
+
+</view>
+
+
+ <view class='pay-state'>
+  支付状态: <text class='{{isTureColor}}'> {{isTrue}}</text>
+</view> 

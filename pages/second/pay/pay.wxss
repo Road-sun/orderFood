@@ -1,0 +1,54 @@
+/* pages/second/pay/pay.wxss */
+.shear-plate-box{
+  display: flex;
+  flex-direction: column;
+}
+
+.copy-hint{
+  display: block;
+  padding: 0 30rpx;
+  color: red;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.shear-plate{
+  display: inline-block;
+  background: #B3E5FC;
+  width: 100%;
+  padding: 20rpx;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #757575;
+}
+
+.shear-plate-bt{
+  display: block;
+  background: #03A9F4;
+  text-align: center;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: white;
+}
+
+.on{
+  background: #0288D1;
+}
+
+.pay-state{
+  display: block;
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+
+.success{
+  color: green;
+}
+
+.fail{
+  color: red;
+}

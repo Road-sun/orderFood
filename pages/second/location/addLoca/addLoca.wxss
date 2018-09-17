@@ -1,0 +1,116 @@
+/* pages/second/location/addLoca/addLoca.wxss */
+
+page {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(239, 239, 239, 0.65);
+}
+
+.main {
+  display: block;
+  width: 100%;
+  background: white;
+  margin-top: 25rpx;
+}
+
+.linkman {
+  display: flex;
+  width: 100%;
+  height: 200rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.linkman-lable {
+  display: block;
+  width: 0;
+  height: 200rpx;
+  flex-grow: 2.5;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.linkman-select {
+  display: block;
+  width: 0;
+  height: 200rpx;
+  flex-grow: 7.5;
+  line-height: 90rpx;
+}
+
+.linkman-input {
+  display: block;
+  padding: 0 10rpx;
+  height: 100rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.sex-select {
+  display: block;
+  width: 100%;
+  height: 100rpx;
+}
+
+.radio-group{
+  width: 100%;
+  height: 100%;
+}
+
+.phone-address {
+  display: flex;
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.phone-lable {
+  display: block;
+  width: 0;
+  height: 100%;
+  flex-grow: 2.5;
+  line-height: 90rpx;
+  text-align: center;
+}
+
+.phone-select {
+  display: block;
+  height: 100%;
+  width: 0;
+  flex-grow: 7.5;
+}
+
+.phone-input{
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.address{
+  display: inline-block;
+  float: left;
+  width: 95%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  line-height: 90rpx;
+  color: #8d8d8d; 
+}
+
+.button{
+  display: inline-block;
+  width: 95%;
+  height: 80rpx;
+  background-color: #5cb85c;
+  text-align: center;
+  line-height: 80rpx;
+  color: white;
+  margin: 0 auto;
+  margin-top: 25rpx;
+}
+
+.button-hover{
+  background-color: #4cae4c;
+}

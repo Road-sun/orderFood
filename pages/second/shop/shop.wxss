@@ -1,0 +1,501 @@
+/* pages/second/shop/shop.wxss */
+page{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.shop-info{
+  display: flex;
+  width: 100%;
+  height: 0;
+  flex-grow: 2;
+  background-color: #03A9F4;
+}
+
+.shop-name{
+  display: inline-block;
+  margin-top: 25rpx;
+  font-size: 18px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.shop-eva{
+  display: inline-block;
+  font-size: 13px;
+  margin-top: 5rpx;
+  width: 100%;
+}
+
+.shop-img-box{
+  display: block;
+  width: 0;
+  height: 100%;
+  flex-grow: 3;
+  padding: 25rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.shop-img{
+  display: block;
+  box-sizing: border-box; 
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: white;
+}
+
+.shop-mess{
+  display: block;
+  width: 0;
+  height: 100%;
+  flex-grow: 7;
+  color: white;
+}
+
+.scroll-tap{
+  display: flex;
+  width: 100%;
+  height: 0;
+  flex-grow: 0.7;
+  border-bottom: 0.3px #DDDDDD solid;
+}
+
+.scroll-option{
+  display: inline-block;
+  text-align: center;
+  width: 33.3%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 12rpx 0;
+  color: #8d8d8d;
+}
+
+.scroll-option-tap{
+  border-bottom: 7rpx #03A9F4 solid;
+  color: #212121;
+}
+
+.swiper-tap{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height:0;
+  flex-grow: 7.3;
+}
+
+.shop-food{
+  display: flex;
+  width: 100%;
+  height: 85%; 
+}
+
+.food-kind-hover{
+  background: white;
+  border-left: 7rpx solid #03A9F4;
+}
+
+.shop-food-kind{
+  display: block;
+  width: 0;
+  height: 100%;
+  flex-grow: 2.7;
+}
+
+.food-kind{
+  display: block;
+  width: 100%;
+  height: 20%;
+  background-color: rgba(239, 239, 239, 0.65);
+  text-align: center;
+  padding: 40rpx 0;
+  box-sizing: border-box;
+}
+
+.food-kind-hover{
+  background-color: white;
+}
+
+.food-mes{
+  display: block;
+  width: 0;
+  height: 100%;
+  flex-grow: 7.3;
+  position : relative; 
+}
+
+.food-swiper{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.food-card{
+  display: flex;
+  width: 100%;
+  height: 220rpx;
+  border-bottom:0.5px  #DDDDDD  solid;
+}
+
+
+.shop-food-img{
+  display: flex;
+  width: 0;
+  height: 100%;
+  flex-grow: 4;
+  justify-content: center;
+  align-items: center;
+}
+
+.food-img{
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 3px;
+}
+
+.food-info{
+  display: flex;
+  flex-direction: column;
+  width: 0;
+  height: 100%;
+  flex-grow: 6;
+}
+
+.food-name{
+  display: inline-block;
+  width: 100%;
+  padding-top:25rpx;
+  font-weight: 700; 
+}
+
+.food-com{
+  display: inline-block;
+  width: 100%;
+  padding-top:17rpx;
+  color: #8d8d8d;
+  font-size: 12px;
+}
+
+.food-price{
+  display: inline-block;
+  width: 100%;
+  padding-top:5rpx;
+  color: #03A9F4;
+}
+
+.buy-food{
+  display: block;
+}
+
+.food-price{
+  display: inline-block;
+  width: 40%;
+  float: left;
+  color: red;
+}
+
+.add-shop{
+  display: inline-block;
+  float: right;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius:50%;
+  background-color: #0288D1;
+  color: white; 
+  margin-right: 30rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 20px;
+  margin-left: 10rpx;
+}
+
+.add-shop-hover{
+  background-color: #03A9F4;
+}
+
+.calculate-num{
+  display: inline-block;
+  float: right;
+  text-align: center;
+  /* width: 30rpx; */
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.min-shop{
+  display: inline-block;
+  float: right;
+  width: 46rpx;
+  height: 46rpx;
+  border-radius:50%;
+  border:2rpx solid  #DDDDDD ; 
+  background-color: white;
+  color: #DDDDDD; 
+  margin-right: 10rpx;
+  text-align: center;
+  line-height: 46rpx;
+  font-size: 20px;
+}
+
+.min-shop-hover{
+  color: red;
+  border-color:red; 
+}
+
+.buy-box{
+  display: flex;
+  width: 100%;
+  height: 15%;
+  background-color: rgba(5, 5, 5, 0.65);
+  color: white;
+}
+
+.s-icon{
+  color: #03A9F4;
+  font-size: 45px;
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  margin-left: 60rpx;
+}
+
+.font-loca{
+  display: inline-block;
+  margin-left: 30rpx;
+}
+
+.shop-buy{
+  display: block;
+  width: 0;
+  height: 100%;
+  flex-grow: 6.8;
+  font-weight: 700;
+} 
+
+.pay-for{
+  display: block;
+  width: 240rpx;
+  height: 100%;
+  background-color:rgba(56,72,78,0.66);
+  text-align:center ;
+  color: rgba(201, 201, 201, 0.67);
+  line-height: 130rpx;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+button::after{border:0}
+
+.pay-for-have{
+  background-color:#03A9F4;
+  color:white ;
+}
+
+
+
+
+.comment-box{
+  display: flex;
+  width: 100%;
+  height: 250rpx;
+  background: white;
+}
+
+.comment-box-left{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+  border-right: 1rpx solid rgba(239, 239, 239, 0.65);
+  justify-content: center;
+  align-items: center;
+
+}
+
+.comment-box-right{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 100%;
+  padding: 30rpx 100rpx;
+  box-sizing: border-box; 
+}
+
+.comment-line{
+  display: block;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+
+
+
+.shop-info-main{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background:rgba(239, 239, 239, 0.65);
+  text-align: center;
+}
+
+.shop-jianjie{
+  display: block;
+  padding: 25rpx;
+  color: #8d8d8d;
+  width: 100%;
+  height: 200rpx;
+  background: white;
+}
+
+.shop-info-all{
+  margin: 30rpx 0;
+  background: white;
+}
+
+.shop-info-jk{
+  display: block;
+  height: 110rpx;
+  width: 100%;
+  border-bottom: 1px solid rgba(239, 239, 239, 0.65);
+  line-height: 110rpx;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+  
+}
+
+.shop-info-name{
+  float: left;
+}
+
+.shop-info-content{
+  float: right;
+  color: #8d8d8d;
+  font-size: 13px;
+}
+
+.order_a {
+  display: inline-block;
+  width: 97%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #00BCD4;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 30rpx;
+}
+
+
+
+
+.drawer_screen {  
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;   
+  z-index: 1000;  
+  background: #000;  
+  opacity: 0.2;  
+  overflow: hidden;  
+}  
+/*content*/  
+.drawer_attr_box {  
+  width: 100%;  
+  overflow: hidden;  
+  position: fixed;  
+  bottom: 11%;  
+  left: 0;  
+  z-index: 1001;  
+  background: #fff;  
+}  
+
+.shop-car-head{
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 80rpx;
+  background-color: #03A9F4;
+  padding: 15rpx 40rpx;
+  line-height: 80rpx; 
+  color: white
+}
+
+.shop-car-text{
+  display: inline-block;
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-left: 5rpx wheat solid;
+  float: left;
+  font-size: 12px;
+  padding-left:15rpx; 
+}
+
+.delete-shop-car{
+  display: inline-block;
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx; 
+  float: right;
+  font-size: 11px;
+}
+
+.delete-icon{
+  width: 50rpx;
+  height: 10rpx;
+  font-size: 16px;
+  
+}
+
+.drawer_content {  
+  padding: 20rpx 40rpx;  
+  height: 470rpx;  
+  overflow-y: scroll;  
+}  
+.drawer_title{ 
+  display: block; 
+  padding:20rpx 0;  
+  height: 130rpx;
+  line-height: 130rpx;  
+}  
+
+.line{  
+  border-bottom: 1px solid #f8f8f8;  
+}
+
+.select-food-name{
+  display: inline-block;
+  float: left;
+  color: #8d8d8d;
+  font-size: 33rpx;
+}  
+
+.select-food-price{
+  display: inline-block;
+  color: red;
+  float: right;
+  font-size: 40rpx;
+  margin-right: 30rpx;
+}
+
+.select-food-num{
+   display: inline-block;
+   float: right;
+   height: 55rpx;
+   margin-top: 42rpx;
+}

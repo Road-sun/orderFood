@@ -1,0 +1,13 @@
+var encode = {
+  encodeURI: function(e){
+    return encodeURI(e);
+  },
+  encodeURIwithoutPercent: function(e){
+    return encodeURI(e).split("%").join("");
+  }
+};
+
+module.exports = {
+  encodeURI: encode.encodeURI,
+  encodeURIWP: encode.encodeURIwithoutPercent
+}
